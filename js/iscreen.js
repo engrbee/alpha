@@ -1,0 +1,3 @@
+var body = '{"status":0,"data":{"pic_lock_count":50,"noAds":1,"ai_painting":1,"launchAd":0,"rewardAd":0,"showOurApp":0,"xiaohongshu":"https://www.xiaohongshu.com/user/profile/5fa3bfe9000000000101faae","vipPopupType":1,"SplashInter":240,"showRing":1,"Hudong_Interval":900,"lockscreen_noVip":"0,1","FeedAd":0,"BannerAd":0,"FeedBanner":"3333","douyin":"https://v.douyin.com/FDTcBfg/","lang":"en","country":"cn"},"ab":0}';
+
+$done({body: body});
