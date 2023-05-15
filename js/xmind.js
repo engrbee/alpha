@@ -1,7 +1,7 @@
 let obj = JSON.parse($response.body);
 
 obj.license = {
-  "status": "Active",
+  "status": "sub",
   "expireTime": 4102415999000
 };
 
