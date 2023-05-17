@@ -51,7 +51,6 @@ if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   .replace(/\"status\":\w+/g, '"status":true')
   .replace(/\"memberStatus\":\w+/g, '"memberStatus":true')
   .replace(/\"status\":\w+/g, '"status":true');
-  };
   $done({body});
 };
 
