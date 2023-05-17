@@ -51,7 +51,7 @@ if (url.indexOf(path2) != -1 && body.indexOf("extendInfo") != -1) {
   var body = $response
   .body
   .replace(/\"status\":\w+/g, '"status":true')
-  .replace(/\"memberStatus\":\w+/g, '"memberStatus":1)
+  .replace(/\"memberStatus\":\w+/g, '"memberStatus":1')
   .replace(/\"preview\":\w+/g, '"preview":true')
   .replace(/\"buttonText":\".*?\"/g, '"buttonText":"Premium"');
   $done({body});
