@@ -45,6 +45,6 @@ if (url.indexOf(path) != -1 && body.indexOf("memberType") != -1) {
   };
   $done({body: JSON.stringify(obj)});
 } else {
-  $done({body})
+  $done({body});
 }
 
