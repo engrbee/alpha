@@ -1,8 +1,17 @@
 var obj = JSON.parse($response.body);
 
-obj.product_infos = [{
+obj.product_infos = [
+  {
+    "product_id": "5310897792128633390",
+    "start_time": 1417260485,
+    "end_time": 4102415999,
+    "buy_time": "1417260485",
+    "cluster": "offlinedl",
+    "detail_cluster": "offlinedl",
+    "product_name": "gz_telecom_exp"
+  }, {
     "product_name": "svip2_nd",
-    "product_description": "SVIP",
+    "product_description": "超级会员",
     "function_num": 0,
     "start_time": 1553702399,
     "buy_description": "",
@@ -13,6 +22,7 @@ obj.product_infos = [{
     "cluster": "vip",
     "detail_cluster": "svip",
     "status": 0
-  }];
+  }
+];
 
 $done({body: JSON.stringify(obj)});
