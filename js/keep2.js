@@ -4,7 +4,7 @@ const path2 = "/course/";
 var url = $request.url;
 var body = $response.body;
 
-if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
+/* if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   var obj = JSON.parse(body);
   obj.data = {
     "id": 41947140,
@@ -27,7 +27,9 @@ if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
     "stockFlag": false
   };
   $done({body: JSON.stringify(obj)});
-} else if (url.indexOf(path2) != -1 && body.indexOf("extendInfo") != -1) {
+} else */
+
+if (url.indexOf(path2) != -1 && body.indexOf("extendInfo") != -1) {
   var obj = JSON.parse(body);
   obj.data.extendInfo.workoutExtendInfos[0].downLoadAll = true;
   obj.data.extendInfo.limitVideoInfo.videoTime = 3000;
@@ -49,7 +51,8 @@ if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   var body = $response
   .body
   .replace(/\"status\":\w+/g, '"status":true')
-  .replace(/\"memberStatus\":\w+/g, '"memberStatus":true')
-  .replace(/\"status\":\w+/g, '"status":true');
+  .replace(/\"memberStatus\":\w+/g, '"memberStatus":1)
+  .replace(/\"preview\":\w+/g, '"preview":true')
+  .replace(/\"buttonText":\".*?\"/g, '"buttonText":"Premium"');
   $done({body});
 };
