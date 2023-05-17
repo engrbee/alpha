@@ -1,15 +1,15 @@
 var body = $response.body;
 var obj = JSON.parse(body);
 
-if (body.Indexof("svip") && body.Indexof("emotional_tip_front")) {
+if (body.Indexof("svip") != -1 && body.Indexof("emotional_tip_front") != -1) {
   obj.svip = {};
 };
 
-if (body.Indexof("vip") && body.Indexof("emotional_tip_front")) {
+if (body.Indexof("vip") != -1 && body.Indexof("emotional_tip_front") != -1) {
   obj.vip = {};
 };
 
-if (body.Indexof("product_infos")) {
+if (body.Indexof("product_infos") != -1) {
   obj.product_infos = [
     {
       "product_id": "5210897752128663390",
