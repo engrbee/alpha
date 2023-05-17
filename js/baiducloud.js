@@ -1,11 +1,11 @@
 var body = $response.body;
 var obj = JSON.parse(body);
 
-if (body.Indexof("svip")) {
+if (body.Indexof("svip") && body.Indexof("emotional_tip_front")) {
     obj.svip = {};
 };
 
-if (body.Indexof("vip")) {
+if (body.Indexof("vip") && body.Indexof("emotional_tip_front")) {
     obj.vip = {};
 };
 
