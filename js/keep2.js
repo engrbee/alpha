@@ -2,9 +2,10 @@ const path1 = "v1/auth";
 const path2 = "/course/";
 
 var url = $request.url;
-var obj = JSON.parse($response.body);
+var body = $response.body
 
-if (url.indexOf(path) != -1) {
+if (url.indexOf(path) != -1 && body.indexOf("memberType") != -1) {
+  var obj = JSON.parse(body);
   obj.data = {
     "id": 41947140,
     "userId": "5f490194d523e964327ef2c8",
@@ -25,8 +26,9 @@ if (url.indexOf(path) != -1) {
     "currentEffectiveDays": 1,
     "stockFlag": false
   };
- 
-if (url.indexOf(path2) != -1) {
+  $done({body: JSON.stringify(obj)});
+} else if (url.indexOf(path2) != -1 && body.indexOf("extendInfo") {
+  var obj = JSON.parse(body);
   obj.data.extendInfo.workoutExtendInfos[0].downLoadAll = true;
   obj.data.extendInfo.limitVideoInfo.videoTime = 3000;
   obj.data.extendInfo.startEnable = true;
@@ -40,7 +42,9 @@ if (url.indexOf(path2) != -1) {
       "memberStatus": true,
       "liveMemberExpireTime": 0,
       "userIdentityType": 5
-    };
-};
-  
-$done({body: JSON.stringify(obj)});
+  };
+  $done({body: JSON.stringify(obj)});
+} else {
+  $done({body})
+}
+
