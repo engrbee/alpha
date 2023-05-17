@@ -9,6 +9,12 @@ if (body.indexOf("vip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj.vip = {};
 };
 
+if (body.indexOf("user_info") != -1 && body.indexOf("is_vip") != -1) {
+  obj.user_info.is_vip = 1;
+  obj.user_info.is_svip = 1;
+  obj.user_info.is_mvip = 1;
+};
+
 if (body.indexOf("tips_data_list") != -1 && body.indexOf("status_data") != -1) {
   obj.tips_data_list = [{}];
   obj.tips_data = {};
