@@ -37,11 +37,11 @@ if (body.indexOf("product_infos") != -1) {
       "buy_description": "离线下载套餐(永久)",
       "product_description": "离线下载套餐(永久)"
     }, {
-      "product_name": "vip2_1y_auto",
-      "product_description": "百度网盘超级会员(1年-自动续费)",
+      "product_name": "vip2_nd",
+      "product_description": "百度网盘超级会员",
       "function_num": 0,
       "start_time": 1553702399,
-      "buy_description": "百度网盘超级会员(1年-自动续费)",
+      "buy_description": "百度网盘超级会员",
       "buy_time": 0,
       "product_id": "1",
       "auto_upgrade_to_svip": 0,
