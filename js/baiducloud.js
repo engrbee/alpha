@@ -1,6 +1,27 @@
 var body = $response.body;
 var obj = JSON.parse(body);
 
+if (body.indexOf("svip") != -1 && body.indexOf("emotional_tip_front") != -1) {
+  obj = {"error_code": 0};
+};
+
+/* if (body.indexOf("vip") != -1 && body.indexOf("emotional_tip_front") != -1) {
+  obj = {};
+};
+
+if (body.indexOf("tips_data_list") != -1 && body.indexOf("status_data") != -1) {
+  obj.tips_data_list = [{}];
+  obj.tips_data = {};
+  obj.status_data = "";
+  obj.status_data_arr = [""];
+};
+
+if (body.indexOf("user_info") != -1 && body.indexOf("is_vip") != -1) {
+  obj.user_info.is_vip = 1;
+  obj.user_info.is_svip = 1;
+  obj.user_info.is_mvip = 1;
+}; */
+
 if (body.indexOf("product_infos") != -1) {
   obj.product_infos = [
     {
@@ -30,7 +51,6 @@ if (body.indexOf("product_infos") != -1) {
       "status": 0
     }
   ];
-  obj.user_tag = "{\"has_buy_record\":1,\"has_buy_vip_svip_record\":1,\"last_buy_record_creat_time\":1669946467,\"is_vip\":1,\"is_svip\":1,\"last_vip_type\":\"svip\",\"last_vip_svip_end_time\":4102415999,\"is_svip_sign\":1,\"notice_user_type\":0,\"notice_user_status\":0,\"is_first_act\":0,\"is_first_charge\":0}"
 };
 
 $done({body: JSON.stringify(obj)});
