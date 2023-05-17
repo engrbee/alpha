@@ -5,6 +5,10 @@ if (body.indexOf("svip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj = {"error_code": 0};
 };
 
+if (body.indexOf("tips_data_list") != -1 && body.indexOf("status_data") != -1) {
+  obj = {"error_code": 0};
+};
+
 /* if (body.indexOf("vip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj = {};
 };
