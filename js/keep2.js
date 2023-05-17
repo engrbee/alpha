@@ -35,6 +35,7 @@ if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   obj.data.extendInfo.hasPaid = true;
   obj.data.extendInfo.klassHasPaid = true;
   obj.data.user.memberStatus = 1;
+  obj.data.user.membershipType = 1;
   obj.data.userMemberDetail = {
       "liveMemberStatus": true,
       "memberAutoRenew": true,
@@ -45,6 +46,11 @@ if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   };
   $done({body: JSON.stringify(obj)});
 } else {
-  $done({body});
+var new_body = body
+  .replace(/\"status\":\w+/g, '"status":true')
+  .replace(/\"memberStatus\":\w+/g, '"memberStatus":true')
+  .replace(/\"status\":\w+/g, '"status":true');
+  };
+  $done({new_body});
 };
 
