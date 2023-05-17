@@ -4,7 +4,7 @@ const path2 = "/course/";
 var url = $request.url;
 var body = $response.body;
 
-if (url.indexOf(path) != -1 && body.indexOf("memberType") != -1) {
+if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   var obj = JSON.parse(body);
   obj.data = {
     "id": 41947140,
@@ -46,5 +46,5 @@ if (url.indexOf(path) != -1 && body.indexOf("memberType") != -1) {
   $done({body: JSON.stringify(obj)});
 } else {
   $done({body});
-}
+};
 
