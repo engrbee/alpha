@@ -1,15 +1,11 @@
 var body = $response.body;
 var obj = JSON.parse(body);
 
-if (body.indexOf("svip") != -1 && body.indexOf("emotional_tip_front") != -1) {
+/* if (body.indexOf("svip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj = {"error_code": 0};
 };
 
-if (body.indexOf("tips_data_list") != -1 && body.indexOf("status_data") != -1) {
-  obj = {"error_code": 0};
-};
-
-/* if (body.indexOf("vip") != -1 && body.indexOf("emotional_tip_front") != -1) {
+if (body.indexOf("vip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj = {};
 };
 
@@ -55,6 +51,8 @@ if (body.indexOf("product_infos") != -1) {
       "status": 0
     }
   ];
+} else {
+  obj = {"error_code": 0};
 };
 
 $done({body: JSON.stringify(obj)});
