@@ -51,6 +51,7 @@ if (body.indexOf("product_infos") != -1) {
       "status": 0
     }
   ];
+  obj.user_tag = "{\"has_buy_record\":1,\"has_buy_vip_svip_record\":1,\"last_buy_record_creat_time\":1669946467,\"is_vip\":1,\"is_svip\":1,\"last_vip_type\":\"svip\",\"last_vip_svip_end_time\":4102415999,\"is_svip_sign\":1,\"notice_user_type\":0,\"notice_user_status\":0,\"is_first_act\":0,\"is_first_charge\":0}"
 };
 
 $done({body: JSON.stringify(obj)});
