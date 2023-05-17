@@ -12,13 +12,17 @@ if (body.Indexof("vip") && body.Indexof("emotional_tip_front")) {
 if (body.Indexof("product_infos")) {
     obj.product_infos = [
         {
-            "product_id": "5310897792128633390",
-            "start_time": 1417260485,
+            "product_id": "5210897752128663390",
+            "start_time": 1379131442,
             "end_time": 2147483648,
-            "buy_time": "1417260485",
+            "buy_time": "1379131442",
             "cluster": "offlinedl",
             "detail_cluster": "offlinedl",
-            "product_name": "gz_telecom_exp"
+            "product_name": "offlinedl_permanent",
+            "status": "0",
+            "function_num": 2,
+            "buy_description": "离线下载套餐(永久)",
+            "product_description": "离线下载套餐(永久)"
         }, {
             "product_name": "svip2_nd",
             "product_description": "超级会员",
