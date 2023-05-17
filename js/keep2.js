@@ -27,7 +27,7 @@ if (url.indexOf(path) != -1 && body.indexOf("memberType") != -1) {
     "stockFlag": false
   };
   $done({body: JSON.stringify(obj)});
-} else if (url.indexOf(path2) != -1 && body.indexOf("extendInfo") {
+} else if (url.indexOf(path2) != -1 && body.indexOf("extendInfo") != -1) {
   var obj = JSON.parse(body);
   obj.data.extendInfo.workoutExtendInfos[0].downLoadAll = true;
   obj.data.extendInfo.limitVideoInfo.videoTime = 3000;
