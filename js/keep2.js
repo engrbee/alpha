@@ -2,7 +2,7 @@ const path1 = "v1/auth";
 const path2 = "/course/";
 
 var url = $request.url;
-var body = $response.body
+var body = $response.body;
 
 if (url.indexOf(path) != -1 && body.indexOf("memberType") != -1) {
   var obj = JSON.parse(body);
