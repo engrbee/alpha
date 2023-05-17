@@ -46,11 +46,12 @@ if (url.indexOf(path1) != -1 && body.indexOf("memberType") != -1) {
   };
   $done({body: JSON.stringify(obj)});
 } else {
-var new_body = body
+  var body = $response
+  .body
   .replace(/\"status\":\w+/g, '"status":true')
   .replace(/\"memberStatus\":\w+/g, '"memberStatus":true')
   .replace(/\"status\":\w+/g, '"status":true');
   };
-  $done({new_body});
+  $done({body});
 };
 
