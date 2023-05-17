@@ -42,9 +42,5 @@ if (url.indexOf(path2) != -1) {
       "userIdentityType": 5
     };
 };
-
-if (url.indexOf(path2) != -1) {
-  obj = {}
-};
-
+  
 $done({body: JSON.stringify(obj)});
