@@ -9,6 +9,14 @@ if (body.indexOf("vip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj.vip = {};
 };
 
+if (body.indexOf("tips_data_list") != -1 && body.indexOf("status_data") != -1) {
+  obj.tips_data_list = [];
+  obj.tips_data = {};
+  obj.status_data = "";
+  obj.status_data_arr = [];
+  obj.new_guide_data = {};
+};
+
 if (body.indexOf("product_infos") != -1) {
   obj.product_infos = [
     {
