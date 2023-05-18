@@ -1,70 +1,4 @@
-const path1 = "users/me/attributes";
-const path2 = "users/me/configs";
-const path3 = "users/me/subscription";
-
-var url = $request.url;
-var method = $request.method;
-
-if (url.indexOf(path1) != -1 && method == "GET") {
-  var obj = [
-    {
-      "name": "push",
-      "value": {
-        "comment": true,
-        "conversation": true,
-        "ding": true,
-        "follow": true,
-        "like": true,
-        "snapshot": true,
-        "store": true
-      }
-    },
-    {
-      "name": "conversations",
-      "value": {
-        "permission": "all"
-      }
-    },
-    {
-      "name": "snapshot",
-      "value": {
-        "saveToLocal": true,
-        "visibility": "all"
-      }
-    },
-    {
-      "name": "privacy",
-      "value": {
-        "mobile": true,
-        "weibo": true
-      }
-    }, {
-      "name": "artwork",
-      "value": {
-        "distributing": true
-      }
-    }, {
-      "name": "individuation",
-      "value": {
-        "showUserIcon": true
-      }
-    }
-  ];
-  $done({body: JSON.stringify(obj)});
-} else if (url.indexOf(path2) != -1 && method == "GET") {
-  var obj = {
-    "shop:order:payedMembership": "true",
-    "user:registerTime": "1582949954",
-    "baidu:binding": "false",
-    "using:ai": "true",
-    "user:crc32": "2004202841",
-    "shop:subscriptionProducts": ""
-  };
-  $done({body: JSON.stringify(obj)});
-} else if (url.indexOf(path3) != -1 && method == "GET") {
-  var obj = [];
-  $done({body: JSON.stringify(obj)});
-} else if ($response.body.indexOf("memberships") != -1 && method == "GET") {
+if ($response.body.indexOf("memberships") != -1 && $request.method == "GET") {
   var obj = JSON.parse($response.body);
   obj.memberships = [{
       "startAt": 1684380849,
@@ -81,13 +15,4 @@ if (url.indexOf(path1) != -1 && method == "GET") {
       "usageType": "unlimited"
     }];
   $done({body: JSON.stringify(obj)});
-} else if ($response.body && $request.method == "GET") {
-  var body = $response
-    .body
-    .replace(/\"ownership\":\"\w+\"/g, '"ownership":"free"')
-    .replace(/\"usageType\":\"\w+\"/g, '"usageType":"unlimited"')
-    .replace(/false/g, "true");
-  $done({body});
-} else {
-  $done({});
 };
