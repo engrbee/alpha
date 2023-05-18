@@ -1,4 +1,4 @@
-if (typeof $response !== "undefined") {
+if (typeof $response.body != "undefined") {
   var body = $response
     .body
     .replace(/\"ownership\":\"\w+\"/g, '"ownership":"free"')
