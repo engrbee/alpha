@@ -1,4 +1,12 @@
-if ($response.body.indexOf("memberships") != -1 && $request.method == "GET") {
+const path1 = "users/me/attributes";
+const path2 = "users/me/configs";
+const path3 = "users/me/subscription";
+
+var url = $request.url;
+var method = $request.method;
+var body = $response.body
+
+if (body.indexOf("memberships") != -1 && method == "GET") {
   var obj = JSON.parse($response.body);
   obj.memberships = [{
       "startAt": 1684380849,
@@ -15,4 +23,13 @@ if ($response.body.indexOf("memberships") != -1 && $request.method == "GET") {
       "usageType": "unlimited"
     }];
   $done({body: JSON.stringify(obj)});
+} else if (body && $request.method == "GET") {
+  var body = $response
+    .body
+    .replace(/\"ownership\":\"\w+\"/g, '"ownership":"free"')
+    .replace(/\"usageType\":\"\w+\"/g, '"usageType":"unlimited"')
+    .replace(/false/g, "true");
+  $done({body});
+} else {
+  $done({body});
 };
