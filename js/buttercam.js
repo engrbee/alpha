@@ -12,6 +12,5 @@ if (body.indexOf("memberships") != -1) {
     }];
   $done({body: JSON.stringify(obj)});
 } else {
-  $done({body: body})
+  $done({body: body});
 };
-
