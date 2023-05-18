@@ -4,7 +4,6 @@ const path3 = "users/me/subscription";
 
 var url = $request.url;
 var method = $request.method;
-var body = $response.body;
 
 if (url.indexOf(path1) != -1 && method == "GET") {
   var obj = [
@@ -65,7 +64,7 @@ if (url.indexOf(path1) != -1 && method == "GET") {
 } else if (url.indexOf(path3) != -1 && method == "GET") {
   var obj = [];
   $done({body: JSON.stringify(obj)});
-} else if (body.indexOf("memberships") != -1 && method == "GET") {
+} else if ($response.body.indexOf("memberships") != -1 && method == "GET") {
   var obj = JSON.parse($response.body);
   obj.memberships = [{
       "startAt": 1684380849,
@@ -82,7 +81,7 @@ if (url.indexOf(path1) != -1 && method == "GET") {
       "usageType": "unlimited"
     }];
   $done({body: JSON.stringify(obj)});
-} else if (body && $request.method == "GET") {
+} else if ($response.body && $request.method == "GET") {
   var body = $response
     .body
     .replace(/\"ownership\":\"\w+\"/g, '"ownership":"free"')
@@ -90,5 +89,5 @@ if (url.indexOf(path1) != -1 && method == "GET") {
     .replace(/false/g, "true");
   $done({body});
 } else {
-  $done({body});
+  $done({});
 };
