@@ -11,3 +11,4 @@ var body = $response.body;
 
 console.log(url);
 console.log(method);
+$done({body});
