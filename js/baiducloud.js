@@ -1,6 +1,5 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-
 /* if (body.indexOf("svip") != -1 && body.indexOf("emotional_tip_front") != -1) {
   obj = {"error_code": 0};
 };
@@ -51,8 +50,21 @@ if (body.indexOf("product_infos") != -1) {
       "status": 0
     }
   ];
+  obj.reminder = {
+    reminderWithContent: [],
+    advertiseContent: []
+  };
+  obj.guide_data = {
+    title: "Premium",
+    content: "已拥有极速下载+视频倍速特权",
+    button: {
+      text: "Premium",
+      action_url: "https://pan.baidu.com/wap/vip/user?from=myvip2#svip"
+    }
+  };
 } else {
-  obj = {"error_code": 0};
+  obj = {
+    "error_code": 0
+  };
 };
-
 $done({body: JSON.stringify(obj)});
