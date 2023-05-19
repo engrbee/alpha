@@ -1,5 +1,5 @@
-const path1 = "/auth/user/check";
-const path2 = "/receipt/ios/status/prisma";
+const path1 = "/auth/user/";
+const path2 = "/receipt/ios/";
 var url = $request.url;
 
 if (url.indexOf(path1) != -1) {
