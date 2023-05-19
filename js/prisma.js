@@ -13,7 +13,7 @@ if (url.indexOf(path1) != -1) {
       "prisma_allow_send_email": false
     },
     "device": {
-      "has_authenticated_user": false
+      "has_authenticated_user": true
     }
   };
 };
@@ -27,7 +27,7 @@ if (url.indexOf(path2) != -1) {
     "is_trial": false,
     "processing_count": 0,
     "is_introductory_used": true,
-    "product_id": "",
+    "product_id": "premium.discount.annual",
     "promotional_offer_id": "",
     "is_grace_period": false,
     "auto_renew_enabled": true,
@@ -37,8 +37,8 @@ if (url.indexOf(path2) != -1) {
     "is_bonus": false,
     "bonus_days_added": 0,
     "device_user_info": {
-      "auth_type": "",
-      "subscription_valid": false
+      "auth_type": "annual",
+      "subscription_valid": true
     }
   };
 };
