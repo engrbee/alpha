@@ -44,7 +44,8 @@ if (body.indexOf("product_infos") != -1) {
   };
 } else if (body.indexOf("new_guide_data") != -1 && body.indexOf("status_data") != -1) {
   obj.status_data = "2099-12-31 到期";
-  obj.status_data_arr = "2099-12-31 到期";
+  obj.status_data_arr = ["2099-12-31 到期"];
+  obj.new_guide_data.button.text= "会员中心";
   obj.new_guide_data.sub_card_list[0]["content"] = "探索会员频道福利";
   obj.new_guide_data.sub_card_list[1]["content"] = "已拥有52项会员特权";
 } else {
