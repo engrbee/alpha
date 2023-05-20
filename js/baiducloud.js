@@ -43,15 +43,11 @@ if (body.indexOf("product_infos") != -1) {
     "current_level" : 10,
   };
 } else if (body.indexOf("new_guide_data") != -1 && body.indexOf("status_data") != -1) {
-  body = $response
-    .body
-    .replace(/\u5df2\u5931\u53bb\u7279\u6743\d+\u5929/g, '2099-12-31 \u5230\u671f')
-    .replace(/\u53bb\u7eed\u8d39/g, '\u4f1a\u5458\u4e2d\u5fc3')
-    .replace(/\u91cd\u62fe/g, '\u5df2\u62e5\u6709');
-  obj = JSON.parse(body);
+  obj.status_data = "2099-12-31 到期";
+  obj.status_data_arr = "2099-12-31 到期";
+  obj.new_guide_data.sub_card_list[0]["content"] = "探索会员频道福利";
+  obj.new_guide_data.sub_card_list[1]["content"] = "已拥有52项会员特权";
 } else {
-  obj = {
-    "error_code": 0
-  };
+  obj = {};
 };
 $done({body: JSON.stringify(obj)});
