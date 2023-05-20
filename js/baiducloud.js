@@ -45,9 +45,9 @@ if (body.indexOf("product_infos") != -1) {
 } else if (body.indexOf("new_guide_data") != -1 && body.indexOf("status_data") != -1) {
   body = $response
     .body
-    .replace(/已失去特权\d+天/g, '2099-12-31 到期')
-    .replace(/去续费/g, '会员中心')
-    .replace(/重拾/g, '已拥有');
+    .replace(/\u5df2\u5931\u53bb\u7279\u6743\d+\u5929/g, '2099-12-31 \u5230\u671f')
+    .replace(/\u53bb\u7eed\u8d39/g, '\u4f1a\u5458\u4e2d\u5fc3')
+    .replace(/\u91cd\u62fe/g, '\u5df2\u62e5\u6709');
   obj = JSON.parse(body);
 } else {
   obj = {
