@@ -1,5 +1,6 @@
 const path1 = "/auth/user/";
 const path2 = "/receipt/ios/";
+const status = typeof $task !== "undefined" ? "HTTP/1.1 200 OK" : 200;
 var url = $request.url;
 
 if (url.indexOf(path1) != -1) {
@@ -43,4 +44,4 @@ if (url.indexOf(path2) != -1) {
   };
 };
 
-$done({body: JSON.stringify(obj)});
+$done({body: JSON.stringify(obj), status: status});
