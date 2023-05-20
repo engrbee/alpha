@@ -25,18 +25,6 @@ if (body.indexOf("user_info") != -1 && body.indexOf("is_vip") != -1) {
 if (body.indexOf("product_infos") != -1) {
   obj.product_infos = [
     {
-      "product_id": "5210897752128663390",
-      "start_time": 1379131442,
-      "end_time": 2147483648,
-      "buy_time": "1379131442",
-      "cluster": "offlinedl",
-      "detail_cluster": "offlinedl",
-      "product_name": "offlinedl_permanent",
-      "status": "0",
-      "function_num": 2,
-      "buy_description": "离线下载套餐(永久)",
-      "product_description": "离线下载套餐(永久)"
-    }, {
       "product_name": "vip2_nd",
       "product_description": "百度网盘超级会员",
       "function_num": 0,
@@ -51,6 +39,9 @@ if (body.indexOf("product_infos") != -1) {
       "status": 0
     }
   ];
+  obj.level_info = {
+    "current_level" : 10,
+  };
 } else {
   obj = {
     "error_code": 0
