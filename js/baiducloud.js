@@ -42,6 +42,13 @@ if (body.indexOf("product_infos") != -1) {
   obj.level_info = {
     "current_level" : 10,
   };
+} else if (body.indexOf("new_guide_data") != -1 && body.indexOf("status_data") != -1) {
+  body = $response
+    .body
+    .repalce(/已失去特权\d+天/g, '2099-12-31 到期')
+    .repalce(/去续费/g, '会员中心')
+    .repalce(/重拾/g, '已拥有');
+  obj = JSON.parse(body);
 } else {
   obj = {
     "error_code": 0
