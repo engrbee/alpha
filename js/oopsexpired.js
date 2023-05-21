@@ -11,7 +11,7 @@ if (url.indexOf(path1) != -1) {
     "is_pro": true,
     "membership_type": 2,
     "membership_name": "yearly",
-    "expires_date": "2023-05-24T06:23:04.000Z"
+    "expires_date": "2099-12-31T23:59:59.000Z"
   };
 };
 
@@ -26,7 +26,7 @@ if (url.indexOf(path2) != -1) {
   obj.isActive = true;
   obj.expiredAt = {
     "__type": "Date",
-    "iso": "2023-05-24T06:23:04.000Z"
+    "iso": "2099-12-31T23:59:59.000Z"
   };
   obj.emailVerified = true;
   obj.mobilePhoneVerified = true;
