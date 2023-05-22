@@ -1,4 +1,4 @@
-re('@"expires_date":".*?"@"expires_date_pst":".*?"@"expires_date_ms":"\w+"@"is_trial_period":"\w+"@"auto_renew_status":"\w+"', '"expires_date":"2099-12-31 23:59:59 Etc/GMT"@"expires_date_pst":"2099-12-31 23:59:59 America/Los_Angeles"@"expires_date_ms":"4102415999000"@"is_trial_period":"false"@"auto_renew_status":"1"');
+re('"expires_date":".*?"@"expires_date_pst":".*?"@"expires_date_ms":"\w+"@"is_trial_period":"\w+"@"auto_renew_status":"\w+"', '"expires_date":"2099-12-31 23:59:59 Etc/GMT"@"expires_date_pst":"2099-12-31 23:59:59 America/Los_Angeles"@"expires_date_ms":"4102415999000"@"is_trial_period":"false"@"auto_renew_status":"1"');
 
 function re() {
   var body = $response.body;
