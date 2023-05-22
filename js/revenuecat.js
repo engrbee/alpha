@@ -14,7 +14,7 @@ if (typeof $response == "undefined") {
     .replace(/\"first_seen\":\".*?"/g, '"first_seen":"2022-01-01T08:00:00Z"')
     .replace(/\"original_purchase_date\":\".*?"/g, '"original_purchase_date":"2022-01-01T08:00:00Z"')
     .replace(/\"unsubscribe_detected_at\":\".*?"/g, '"unsubscribe_detected_at":null')
-    .replace(/\"period_type\":\"\w+\"/g, '"period_type":"annual"');
+    .replace(/\"period_type\":\"\w+\"/g, '"period_type":"active"');
 };
 
 $done(resp);
