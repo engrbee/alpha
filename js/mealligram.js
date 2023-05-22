@@ -1,7 +1,4 @@
-let body = $response.body;
-var obj = JSON.parse(body);
-
-obj = {
+var obj = {
   "expiresAt" : 4102415999,
   "productId" : "com.LeFal.Mealligram.pro.oneYear"
 };
