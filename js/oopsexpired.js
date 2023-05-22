@@ -1,5 +1,5 @@
 var body = $response.body;
-var obj = JSON.parse(.body);
+var obj = JSON.parse(body);
 
 if (obj !== "undefined") {
   obj.result.data.membership_type = 2;
