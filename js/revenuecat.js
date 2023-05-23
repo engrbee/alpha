@@ -1,5 +1,5 @@
 const ua = $request.headers['User-Agent'] || $request.headers['user-agent'];
-const body = typeof $response != "undefined" && $response.body || null;
+const body = typeof $response != "undefined" && $response.body;
 
 if (ua.indexOf("VSCO") != -1 && body.indexOf("expires_date") != -1) {
   var obj = JSON.parse(body);
