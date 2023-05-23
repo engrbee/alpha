@@ -7,6 +7,8 @@ if (typeof $response == "undefined") {
   delete $request.headers["X-RevenueCat-ETag"];
   resp.headers = $request.headers;
 } else if (ua['indexOf']('VSCO') != -1) {
+  obj.subscriber.non_subscriptions = {};
+  obj.subscriber.other_purchases = {};
   obj.subscriber.entitlements = {
     "membership": {
       "expires_date": "2099-12-31T23:59:59Z",
