@@ -29,7 +29,7 @@ if (ua.indexOf("VSCO") != -1 && body.indexOf("expires_date") != -1) {
       "unsubscribe_detected_at": null
     }
   };
-  body = JSON.stringify(obj)
+  body = JSON.stringify(obj);
 } else if (body.indexOf("expires_date") != -1) {
   body = $response
     .body
