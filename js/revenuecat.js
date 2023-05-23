@@ -7,11 +7,13 @@ if (typeof $response == "undefined") {
   delete $request.headers["X-RevenueCat-ETag"];
   resp.headers = $request.headers;
 } else if (ua['indexOf']('VSCO') != -1) {
-  obj.subscriber.entitlements = "membership" : {
-    "expires_date": "2099-12-31T23:59:59Z",
-    "grace_period_expires_date": null,
-    "product_identifier": "vscopro_global_5999_annual_7D_free",
-    "purchase_date": "2022-01-01T08:00:00Z"
+  obj.subscriber.entitlements = {
+    "membership": {
+      "expires_date": "2099-12-31T23:59:59Z",
+      "grace_period_expires_date": null,
+      "product_identifier": "vscopro_global_5999_annual_7D_free",
+      "purchase_date": "2022-01-01T08:00:00Z"
+    }
   };
   obj.subscriber.subscriptions = {
     "vscopro_global_5999_annual_7D_free": {
