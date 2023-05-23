@@ -6,7 +6,7 @@ var obj = {
     "Build": "12900",
     "LicenseKey": "PXM-2ED2-8F7A-9EB3-F7A8-712C",
     "Tittle": "Thank you for purchasing Proxyman! Your support helps us ship Proxyman even more awesome.",
-    "sign": "UFhNLVFXRVItQVNERi1aWENWLVVJT1AtSEpLTA==",
+    "sign": "UFhNLTJFRDItOEY3QS05RUIzLUY3QTgtNzEyQw==",
     "deviceID": "D5FB34F4-2BE1-48B7-B8B6-0134995B2257",
     "email": "huang@gmail.com",
     "purchasedAt": "1 Jan 2023",
