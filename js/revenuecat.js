@@ -6,7 +6,18 @@ if (typeof $response == "undefined") {
   delete $request.headers["x-revenuecat-etag"];
   delete $request.headers["X-RevenueCat-ETag"];
   resp.headers = $request.headers;
-} else if (ua['indexOf']('VSCO') != -1) {
+} else if (obj && obj.subscriber) {
+  resp.body = JSON
+    .stringify(obj)
+    .replace(/\"expires_date\":\".*?"/g, '"expires_date":"2099-12-31T23:59:59Z"')
+    .replace(/\"purchase_date\":\".*?"/g, '"purchase_date":"2022-01-01T08:00:00Z"')
+    .replace(/\"first_seen\":\".*?"/g, '"first_seen":"2022-01-01T08:00:00Z"')
+    .replace(/\"original_purchase_date\":\".*?"/g, '"original_purchase_date":"2022-01-01T08:00:00Z"')
+    .replace(/\"unsubscribe_detected_at\":\".*?"/g, '"unsubscribe_detected_at":null')
+    .replace(/\"period_type\":\"\w+\"/g, '"period_type":"active"');
+};
+
+if (ua['indexOf']('VSCO') != -1) {
   obj.subscriber.non_subscriptions = {};
   obj.subscriber.other_purchases = {};
   obj.subscriber.entitlements = {
@@ -33,16 +44,7 @@ if (typeof $response == "undefined") {
       "unsubscribe_detected_at": null
     }
   };
-  resp.body = JSON.stringify(obj);
-} else if (obj && obj.subscriber) {
-  resp.body = JSON
-    .stringify(obj)
-    .replace(/\"expires_date\":\".*?"/g, '"expires_date":"2099-12-31T23:59:59Z"')
-    .replace(/\"purchase_date\":\".*?"/g, '"purchase_date":"2022-01-01T08:00:00Z"')
-    .replace(/\"first_seen\":\".*?"/g, '"first_seen":"2022-01-01T08:00:00Z"')
-    .replace(/\"original_purchase_date\":\".*?"/g, '"original_purchase_date":"2022-01-01T08:00:00Z"')
-    .replace(/\"unsubscribe_detected_at\":\".*?"/g, '"unsubscribe_detected_at":null')
-    .replace(/\"period_type\":\"\w+\"/g, '"period_type":"active"');
 };
+resp.body = JSON.stringify(obj);
 
 $done(resp);
