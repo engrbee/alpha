@@ -49,7 +49,7 @@ if (url.indexOf(path1) != -1) {
     };
   $done({body: JSON.stringify(obj)});
 } else if (url.indexOf(path4) != -1) {
-  obj.data.vipButtonShow = 1;
+  obj.data.vipButtonIsShow = 1;
   $done({body: JSON.stringify(obj)});
 } else {
   $done({body: body});
