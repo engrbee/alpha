@@ -2,6 +2,7 @@ const path1 = "/user/permissions";
 const path2 = "/home/getUser";
 const path3 = "/vip/userinfo";
 const path4 = "/vip/myvip";
+const path5 = "/school/getVipButtonStatus";
 
 var url = $request.url;
 var body = $response.body;
@@ -55,4 +56,6 @@ if (url.indexOf(path1) != -1) {
     .replace(/\\d{4}\\-\\d{2}\\-\\d{2}/g, '2099-12-31')
     .replace(/<i class=\\"vip-state.*?">/g, '<i class="vip-state is-vip ">');
   $done({body: body});
+} else if (url.indexOf(path5) != -1) {
+  obj.data.vipButtonShow = 1;
 };
