@@ -1,8 +1,7 @@
 const path1 = "/user/permissions";
 const path2 = "/home/getUser";
 const path3 = "/vip/userinfo";
-const path4 = "/vip/myvip";
-const path5 = "/school/getVipButtonStatus";
+const path4 = "/school/getVipButtonStatus";
 
 var url = $request.url;
 var body = $response.body;
@@ -50,12 +49,7 @@ if (url.indexOf(path1) != -1) {
     };
   $done({body: JSON.stringify(obj)});
 } else if (url.indexOf(path4) != -1) {
-  var body = $response
-    .body
-    .replace(/\"vip":\\{.*?\\}/g, '"vip":{"growth":"0","mark":"1","first_time":"1684894739","last_time":"1684894739","maturity_time":"2099-12-31","is_auto":"1","autoType":"1","type":"1","stall_id":"0","stall_title":"999\u5929","pay_type":"1","is_del":"1","xh_code":"","is_vip":true}')
-    .replace(/\\d{4}\\-\\d{2}\\-\\d{2}/g, '2099-12-31')
-    .replace(/<i class=\\"vip-state.*?">/g, '<i class="vip-state is-vip ">');
-  $done({body: body});
-} else if (url.indexOf(path5) != -1) {
   obj.data.vipButtonShow = 1;
+} else {
+  $done({body: body});
 };
