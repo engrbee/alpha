@@ -51,7 +51,7 @@ var obj = {
   "isActiveMember": true,
   "plan": "YEARLY",
   "source": "IOS",
-  "expirationDate": "12-31-2023",
+  "expirationDate": "12-31-2099",
   "membershipStatus": "ACTIVE",
   "hasLegacyAccess": true,
   "currentIosAutoRenewPreference": {
