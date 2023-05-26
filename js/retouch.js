@@ -8,7 +8,7 @@ var obj = {
     "original_application_version": "1682",
     "other_purchases": {
     },
-    "management_url": mull,
+    "management_url": null,
     "subscriptions": {
       "tr5_yearlysubsc_15dlrs_1": {
         "original_purchase_date": "2022-01-01T08:00:00Z",
