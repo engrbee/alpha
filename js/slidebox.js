@@ -1,16 +1,16 @@
 var obj = {
   "result" : {
     "subscriptionTrialPeriod" : false,
-    "subscriptionExpirationDateMs" : 1872518379000,
-    "isEligibleForFreeTrial" : true,
-    "subscriptionProductId" : "com.Yooshr.Giftr.subscriptionPremium.Yearly",
-    "originalAppVersion" : "1205",
-    "subscriptionAutoRenewStatus" : 1,
+    "subscriptionExpirationDateMs" : null,
+    "isEligibleForFreeTrial" : false,
+    "subscriptionProductId" : "co.slidebox.Slidebox.Premium",
+    "originalAppVersion" : "2113",
+    "subscriptionAutoRenewStatus" : 0,
     "subscriber_platform" : "ios",
     "isValidSubscriber" : true,
     "isEligibleForSubscriptionOffer" : true,
     "subscriptionDateLastVerified" : 1651654341272,
-    "subscriptionAutoRenewPreference" : "com.Yooshr.Giftr.subscriptionPremium.Yearly"
+    "subscriptionAutoRenewPreference" : "co.slidebox.Slidebox.Premium"
   }
 };
 
