@@ -12,12 +12,12 @@ var obj = {
     "subscriptions": {
       "today.structured.pro": {
         "original_purchase_date": "2022-01-01T08:00:00Z",
-        "expires_date": "2099-12-31T23:59:59Z",
+        "expires_date": null,
         "is_sandbox": false,
         "refunded_at": null,
         "unsubscribe_detected_at": null,
         "grace_period_expires_date": null,
-        "period_type": "active",
+        "period_type": "lifetime",
         "purchase_date": "2022-01-01T08:00:00Z",
         "billing_issues_detected_at": null,
         "ownership_type": "PURCHASED",
@@ -30,7 +30,7 @@ var obj = {
         "grace_period_expires_date": null,
         "purchase_date": "2022-01-01T08:00:00Z",
         "product_identifier": "today.structured.pro",
-        "expires_date": "2099-12-31T23:59:59Z"
+        "expires_date": null
       }
     },
     "original_purchase_date": "2022-01-01T08:00:00Z",
