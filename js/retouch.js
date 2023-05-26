@@ -10,7 +10,7 @@ var obj = {
     },
     "management_url": null,
     "subscriptions": {
-      "tr5_yearlysubsc_15dlrs_1": {
+      "tr5_yearlysubsc_15dlrs_2": {
         "original_purchase_date": "2022-01-01T08:00:00Z",
         "expires_date": "2099-12-31T23:59:59Z",
         "is_sandbox": false,
@@ -26,10 +26,10 @@ var obj = {
       }
     },
     "entitlements": {
-      "pro": {
-        "tr5_yearlysubsc_15dlrs_1": null,
+      "premium": {
+        "grace_period_expires_date": null,
         "purchase_date": "2022-01-01T08:00:00Z",
-        "product_identifier": "tr5_yearlysubsc_15dlrs_1",
+        "product_identifier": "tr5_yearlysubsc_15dlrs_2",
         "expires_date": "2099-12-31T23:59:59Z"
       }
     },
