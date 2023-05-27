@@ -24,7 +24,7 @@ if (body.indexOf("expires_date") != -1) {
   for (const i in list) {
     if (new RegExp(`^${i}`, `i`).test(ua)) {
       body = JSON.stringify(obj)
-        .replace(/\"product_id\":\".*?\"/g, `"product_id":${list[i]}`, );
+        .replace(/\"product_id\":\".*?\"/g, `"product_id":${list[i]}`);
     }
   };
 };
