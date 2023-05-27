@@ -1,4 +1,5 @@
-function re(a, b, body) {
+function re(a, b, c) {
+  var body = c;
   var regs = a.split("@");
   var strs = b.split("@");
   for (i = 0; i < regs.length; i ++) {
@@ -22,9 +23,8 @@ var body = $response.body;
 
 if (body.indexOf("expires_date") != -1) {
   var new_body = re(a, b, body);
-  $done({new_body});
+  $done({body: new_body});
 } else {
-  var body = $response.body;
   var obj = JSON.parse(body);
   obj.receipt.in_app = in_app_data;
   obj.latest_receipt_info = in_app_data;
