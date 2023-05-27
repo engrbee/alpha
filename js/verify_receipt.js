@@ -27,7 +27,6 @@ if (body.indexOf("expires_date") != -1) {
   obj.pending_renewal_info = renew_data;
   for (const i in list) {
     if (new RegExp(`^${i}`, `i`).test(ua)) {
-      console.log(i, list[i])
       body = JSON.stringify(obj)
         .replace(/\"product_id\":\".*?\"/g, `"product_id":"${list[i]}"`)
         .replace(/\"auto_renew_product_id\":\".*?\"/g, `"auto_renew_product_id":"${list[i]}"`);
