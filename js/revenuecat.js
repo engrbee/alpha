@@ -6,6 +6,7 @@ let list = {
   'Balance': {name: 'pro', id: 'ios_subscription_annual_intl_intro_free_69.99_2021.12.06'},
   'Rootd': {name: 'pro', id: 'subscription_lifetime'},
   'Structured': {name: 'pro', id: 'app.structured.pro.yearly'},
+  'VSCO': {name: 'membership', id: 'vscopro_global_5999_annual_7D_free'},
   'TouchRetouch': {name: 'premium', id: 'tr5_yearlysubsc_15dlrs_1'}
 };
 let data = {"expires_date": "2099-12-31T23:59:59Z", "original_purchase_date": "2021-01-01T08:00:00Z", "purchase_date": "2021-01-01T08:00:00Z"};
