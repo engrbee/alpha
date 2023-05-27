@@ -14,7 +14,8 @@ var b = '$1:"2022-01-01 08:00:00 Etc/GMT"@$1:"2022-01-01 08:00:00 America/Los_An
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
 let list = {
   "InstaShot": "com.camerasideas.InstaShot.InShotPro_yearly",
-  "VSCO": "com.camerasideas.InstaShot.InShotPro_yearly"
+  "WaterReminder": "com.vgfit.waterreminder.year",
+  "Peachy": "com.camerasideas.Peachy.pro_yearly"
 };
 let in_app_data = [{"quantity":"1","product_id":"com.engrbee.alpha","transaction_id":"510001235226666","original_transaction_id":"510001215510144","purchase_date":"2022-01-01 08:00:00 Etc/GMT","purchase_date_ms":"1641024000000","purchase_date_pst":"2022-01-01 08:00:00 America/Los_Angeles","original_purchase_date":"2022-01-01 08:00:00 Etc/GMT","original_purchase_date_ms":"1641024000000","original_purchase_date_pst":"2022-01-01 08:00:00 America/Los_Angeles","expires_date":"2099-12-31 23:59:59 Etc/GMT","expires_date_ms":"4102415999000","expires_date_pst":"2099-12-31 23:59:59 America/Los_Angeles","web_order_line_item_id":"510000569909652","is_trial_period":"false","is_in_intro_offer_period":"false","in_app_ownership_type":"PURCHASED"}];
 let renew_data = [{"expiration_intent":"0","auto_renew_product_id":"com.engrbee.alpha","is_in_billing_retry_period":"0","product_id":"com.engrbee.alpha","original_transaction_id":"510001235226666","auto_renew_status":"1"}];
