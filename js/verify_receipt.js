@@ -1,5 +1,4 @@
-function re(a, b, c) {
-  var body = c;
+function re(a, b, body) {
   var regs = a.split("@");
   var strs = b.split("@");
   for (i = 0; i < regs.length; i ++) {
