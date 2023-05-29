@@ -14,6 +14,7 @@ let list = {
   "Prisma": {"name": "premium", "id": "premium.promo.annual"},
   "Endel": {"name": "pro", "id": "12_Months_Instant_Offer"},
   "Balance": {"name": "pro", "id": "ios_subscription_annual_69.99_2020.04.15"},
+  "Harukong": {"name": "premium", "id": "com.bluesignum.harukong.1yearSubscription"},
   "Uptime": {"name": "premium", "id": "com.wingsy.uptime_premium_year"},
   "TouchRetouch": {"name": "premium", "id": "tr5_yearlysubsc_15dlrs_1"}
 };
