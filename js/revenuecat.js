@@ -18,6 +18,7 @@ let list = {
   "Harukong": {"name": "premium", "id": "com.bluesignum.harukong.1yearSubscription"},
   "Uptime": {"name": "premium", "id": "com.wingsy.uptime_premium_year"},
   "Planta": {"name": "premium", "id": "com.stromming.Plants.12month"},
+  "ChatGPTApp": {"name": "Advanced", "id": "com.palligroup.gpt3.yearlyyy"},
   "TouchRetouch": {"name": "premium", "id": "tr5_yearlysubsc_15dlrs_1"}
 };
 let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2099-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
