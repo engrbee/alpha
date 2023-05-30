@@ -6,8 +6,8 @@ const cons2 = "https://api.blinkist.com/v4/me.json";
 const cons3 = "https://api.blinkist.com/v4/me/access";
 
 if ((url === cons1) || (url === cons2)) {
-  obj["user"]["trial_ending_at"] = null;
-  obj["user"]["free_access_ending_at"] = null;
+  obj["user"]["trial_ending_at"] = "2099-12-31T23:59:59.000+08:00";
+  obj["user"]["free_access_ending_at"] = "2099-12-31T23:59:59.000+08:00";
   obj["user"]["subscription_period_ending_at"] = "2099-12-31T23:59:59.000+08:00";
   obj["user"]["access_type"] = "premium";
   obj["user"]["access_source"] = "itunes";
