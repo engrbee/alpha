@@ -24,4 +24,4 @@ if (url.indexOf(path2) != -1) {
   obj["latest_receipt_info"][0]["expires_date_ms"] = "1704038399000";
 };
 
-$done({body: JSON.stringify(obj)});
+$done({status:200,body:JSON.stringify(obj)});
