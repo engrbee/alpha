@@ -4,7 +4,7 @@ let obj = JSON.parse(body);
 let ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
 let list = {
   "Balance": {"name": "pro", "id": "ios_subscription_annual_intl_intro_free_69.99_2021.12.06"},
-  "Rootd": {"name": "pro", "id": "subscription_lifetime"},
+  "Rootd": {"name": "pro", "id": "subscription_yearly_week_trial"},
   "Structured": {"name": "pro", "id": "app.structured.pro.yearly"},
   "VSCO": {"name": "membership", "id": "vscopro_global_5999_annual_7D_free"},
   "Photo": {"name": "pro", "id": "pixelmator_photo_yearly_v1"},
