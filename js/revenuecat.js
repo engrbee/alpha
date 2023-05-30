@@ -7,8 +7,8 @@ let list = {
   "Rootd": {"name": "pro", "id": "subscription_lifetime"},
   "Structured": {"name": "pro", "id": "app.structured.pro.yearly"},
   "VSCO": {"name": "membership", "id": "vscopro_global_5999_annual_7D_free"},
-  "Photo": {"name": "pro", "id": "pixelmator_photo_lifetime_v1"},
-  "Lungy": {"name": "pro", "id": "lungy_1999_lifetime"},
+  "Photo": {"name": "pro", "id": "pixelmator_photo_yearly_v1"},
+  "Lungy": {"name": "pro", "id": "lungy_1499_1y_1w0"},
   "ScannerPro": {"name": "premium", "id": "com.readdle.Scanner.subscription.year25"},
   "NotePlan": {"name": "pro", "id": "co.noteplan.subscription.businessclass.annual"},
   "Prisma": {"name": "premium", "id": "premium.promo.annual"},
@@ -17,7 +17,7 @@ let list = {
   "Balance": {"name": "pro", "id": "ios_subscription_annual_69.99_2020.04.15"},
   "Harukong": {"name": "premium", "id": "com.bluesignum.harukong.1yearSubscription"},
   "Uptime": {"name": "premium", "id": "com.wingsy.uptime_premium_year"},
-  "Planta": {"name": "premium", "id": "com.stromming.Plants.lifetime"},
+  "Planta": {"name": "premium", "id": "com.stromming.Plants.12month"},
   "TouchRetouch": {"name": "premium", "id": "tr5_yearlysubsc_15dlrs_1"}
 };
 let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2099-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
