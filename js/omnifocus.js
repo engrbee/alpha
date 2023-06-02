@@ -1,31 +1,10 @@
-// const path1 = "/registrations/";
-// const path2 = "/refresh/";
+var obj = JSON.parse($response.body);
 
-// var url = $request.url;
-// var body = $response.body;
-// var obj = JSON.parse(body);
+obj["registrations"][0]["purchased_product_ids"] = ["ITOF3_SUB_MONTHLY"];
+obj["registrations"][0]["receipt_data"] = "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";
+obj["purchased_product_ids"] = ["ITOF3_SUB_MONTHLY"];
+obj["subscriptions"][1]["subscription_state"] = "active";
+obj["subscriptions"][1]["auto_renew_status"] = true;
+obj["subscriptions"][1]["expires_date"] = "2099-12-31T23:59:59+08:00";
 
-// if (body.indexOf("subscriptions") && url.indexOf(path1) != -1) {
-// /*    obj["registrations"][0]["purchased_product_ids"] = "ITOF3_SUB_ANNUAL";
-//     obj["purchased_product_ids"] = "ITOF3_SUB_ANNUAL";
-//     obj["subscriptions"][1]["product_id"] = "ITOF3_SUB_ANNUAL";
-//     obj["subscriptions"][1]["auto_renew_status"] = true */
-//     obj["subscriptions"][1]["expires_date"] = "2099-12-31T23:59:59.000000+08:00";
-//     $done({body: JSON.stringify(obj)});
-// } else if (body.indexOf("expires_at") && url.indexOf(path2) != -1) {
-//     var body = $response
-//     .body
-//     .replace('"expires_at":\s*[\d\.]+', '"expires_at":4102415999.000000');
-//     $done({body: body})
-// } else {
-//     $done({body: body});
-// };
-
-var body = $response
-  .body
-  .replace(/\"expires_date\":\\s*\".*?\"/g, '"expires_date":"2099-12-31T23:59:59.000000+08:00"')
-  .replace(/\"registration_date\":\\s*\".*?\"/g, '"registration_date":"2022-01-01T08:00:00.000000+08:00"')
-  .replace(/\"subscription_state\":\\s*\"\\w+\"/g, '"subscription_state":"active"')
-  .replace(/\"auto_renew_status\":\\s*\\w+/g, '"auto_renew_status":true');
-
-$done({body});
+$done({body: JSON.stringify(obj)});
