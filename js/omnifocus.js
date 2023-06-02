@@ -24,8 +24,8 @@
 var body = $response
   .body
   .replace(/\"expires_date\":\\s*\".*?\"/g, '"expires_date":"2099-12-31T23:59:59.000000+08:00"')
-  .replace(/\"registration_date\"\\s*:\".*?\"/g, '"registration_date":"2022-01-01T08:00:00.000000+08:00"')
-  .replace(/\"subscription_state\"\\s*:\"\\w+\"/g, '"subscription_state":"active"')
-  .replace(/\"auto_renew_status\"\\s*:\\w+/g, '"auto_renew_status":true');
+  .replace(/\"registration_date\":\\s*\".*?\"/g, '"registration_date":"2022-01-01T08:00:00.000000+08:00"')
+  .replace(/\"subscription_state\":\\s*\"\\w+\"/g, '"subscription_state":"active"')
+  .replace(/\"auto_renew_status\":\\s*\\w+/g, '"auto_renew_status":true');
 
 $done({body});
