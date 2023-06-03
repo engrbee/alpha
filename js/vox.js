@@ -7,7 +7,7 @@ var obj = {
   "firstName": "Eric",
   "lastName": "Huang",
   "name": "",
-  "email": "eric@privaterelay.appleid.com",
+  "email": "yfrqxqqdpf@privaterelay.appleid.com",
   "hasTracks": true,
   "subscriptionStatus": "active",
   "gracePeriod": 0,
