@@ -32,5 +32,5 @@ if (url.indexOf(path2) != -1) {
       }
     }
   };
-  $done({body: JSON.stringify(obj)});
+  $done({status: 200, body: JSON.stringify(obj)});
 };
