@@ -14,7 +14,7 @@ if (url.indexOf(path1) != -1) {
 };
 
 if (url.indexOf(path2) != -1) {
-  if body {
+  if (body) {
     let obj = {
       "user_subscription": {
         "user_id": 15424269,
