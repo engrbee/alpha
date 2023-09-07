@@ -1,19 +1,14 @@
 /* 
-
 Name：Spark 
 download：https://t.cn/A60o4pn5
 To：@ios151
 disclaimers：Study, not spread
 
-
 [rewrite_local]
 ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/spark.js
 
-
 [MITM]
 hostname = api.revenuecat.com
-
-
 */
 
 const lovebaby = {};
