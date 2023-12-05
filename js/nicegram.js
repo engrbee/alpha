@@ -1,24 +1,23 @@
-const url = $request.url;
-const isQX = typeof $task !== "undefined";
-var chxm1023 = JSON.parse($response.body);
-const subscriptionTest = /https:\/\/nicegram\.cloud\/api\/v\d\/user\/info/;
-const premiumTest = /https:\/\/restore-access\.indream\.app\/restoreAccess/;
+const path1 = "restoreAccess";
+const path2 = "settings";
+const path3 = "user/info";
 
-if (subscriptionTest.test(url)) {
-  chxm1023.data.user = {
-    ...chxm1023.data.user,
-    subscription: true,
-    store_subscription: true,
-    lifetime_subscription: true
-  };
-}
+var url = $request.url;
+var body = $response.body;
+var obj = JSON.parse(body);
 
-if (premiumTest.test(url)) {
-  chxm1023["data"] = {"premiumAccess": true};
-}
+if (url.indexOf(path1) != -1) {
+  obj.data.premiumAccess = true;
+};
 
-function finalizeResponse(content) {
-  return { status: isQX ? "HTTP/1.1 200 OK" : 200, headers: $response.headers, body: JSON.stringify(content) };
-}
+if (url.indexOf(path2) != -1) {
+  obj.premium = true;
+};
 
-$done(isQX ? finalizeResponse(chxm1023) : chxm1023);
+if (url.indexOf(path3) != -1) {
+  obj.data.user.subscription = true;
+  obj.data.user.store_subscription = true;
+  obj.data.user.lifetime_subscription = true;
+};
+
+$done({status:200,headers:{'Content-Type':'application/json'},body:JSON.stringify(obj)});
