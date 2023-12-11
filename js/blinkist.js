@@ -32,8 +32,11 @@ if ((url === cons1) || (url === cons2)) {
 if (url === cons3) {
   obj["user_access"]["type"] = "premium";
   obj["user_access"]["marketplace"] = "itunes";
+  obj["user_access"]["valid_from"] = "2022-01-01T08:00:00.000+08:00";
   obj["user_access"]["valid_until"] = "2099-12-31T23:59:59.000+08:00";
-  obj["user_access"]["premium"] = "softpaywall";
+  // obj["user_access"]["premium"] = "softpaywall";
+  obj["user_access"]["trial"] = "softpaywall";
+  obj["user_access"]["will_renew"] = true;
 };
 
 $done({body: JSON.stringify(obj)});
