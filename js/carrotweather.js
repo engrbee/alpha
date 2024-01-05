@@ -5,23 +5,22 @@ var url = $request.url;
 var obj = JSON.parse($response.body);
 
 if (url.indexOf(path1) != -1) {
-  obj.result.subscriptions[0]["expirationTime"] = "1704038399000";
+  obj.result.subscriptions[0]["expirationTime"] = "1735650000000";
   obj.result.subscriptions[0]["autoRenewStatus"] = 1;
   obj.result.subscriptions[0]["productId"] = "com.grailr.carrotWeather.newPremiumFamily1year";
 };
 
 if (url.indexOf(path2) != -1) {
-  
   obj["receipt"]["in_app"][0]["is_trial_period"] = false;
   obj["receipt"]["in_app"][0]["product_id"] = "com.grailr.carrotWeather.newPremiumFamily1year";
-  obj["receipt"]["in_app"][0]["expires_date"] = "2023-12-31 23:59:59 Etc/GMT";
-  obj["receipt"]["in_app"][0]["expires_date_pst"] = "2023-12-31 23:59:59 America/Los_Angeles";
-  obj["receipt"]["in_app"][0]["expires_date_ms"] = "1704038399000";
+  obj["receipt"]["in_app"][0]["expires_date"] = "2024-12-31 13:59:59 Etc/GMT";
+  obj["receipt"]["in_app"][0]["expires_date_pst"] = "2024-12-31 13:59:59 America/Los_Angeles";
+  obj["receipt"]["in_app"][0]["expires_date_ms"] = "1735650000000";
   obj["latest_receipt_info"][0]["is_trial_period"] = false;
   obj["latest_receipt_info"][0]["product_id"] = "com.grailr.carrotWeather.newPremiumFamily1year";
-  obj["latest_receipt_info"][0]["expires_date"] = "2023-12-31 23:59:59 Etc/GMT";
-  obj["latest_receipt_info"][0]["expires_date_pst"] = "2099-12-31 23:59:59 America/Los_Angeles";
-  obj["latest_receipt_info"][0]["expires_date_ms"] = "1704038399000";
+  obj["latest_receipt_info"][0]["expires_date"] = "2024-12-31 13:59:59 Etc/GMT";
+  obj["latest_receipt_info"][0]["expires_date_pst"] = "2024-12-31 13:59:59 America/Los_Angeles";
+  obj["latest_receipt_info"][0]["expires_date_ms"] = "1735650000000";
 };
 
 $done({status:200,body:JSON.stringify(obj)});
