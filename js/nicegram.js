@@ -11,7 +11,8 @@ if (url.indexOf(path1) != -1) {
 };
 
 if (url.indexOf(path2) != -1) {
-  obj.premium = true;
+  // obj.premium = true;
+  obj = {"settings":{"sync_chats":true,"custom_notifications":false,"max_pinned_chats":5},"reasons":["porn","copyright","appleviolence","androidterms","appleterms"],"allowed":[],"restricted":[845385857,699361853],"premium":true}
 };
 
 if (url.indexOf(path3) != -1) {
