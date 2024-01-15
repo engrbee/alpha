@@ -4,7 +4,7 @@ const path3 = "user/info";
 
 var url = $request.url;
 var body = $response.body;
-var obj = JSON.parse(body);
+var obj = JSON.parse(body) || {};
 
 if (url.indexOf(path1) != -1) {
   obj.data.premiumAccess = true;
@@ -20,4 +20,4 @@ if (url.indexOf(path3) != -1) {
   obj.data.user.lifetime_subscription = true;
 };
 
-$done({status:200,headers:{'Content-Type':'application/json'},body:JSON.stringify(obj)});
+$done({status:200, headers:{'Content-Type':'application/json'}, body:JSON.stringify(obj)});
