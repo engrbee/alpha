@@ -4,7 +4,7 @@ const path3 = "user/info";
 
 var url = $request.url;
 var body = $response.body;
-var obj = JSON.parse(body) || {};
+var obj = JSON.parse(body);
 
 if (url.indexOf(path1) != -1) {
   obj.data.premiumAccess = true;
