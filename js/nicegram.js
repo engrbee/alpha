@@ -10,9 +10,9 @@ if (url.indexOf(path1) != -1) {
   obj.data.premiumAccess = true;
 };
 
-if (url.indexOf(path2) != -1) {
-  obj.premium = true;
-};
+// if (url.indexOf(path2) != -1) {
+//   obj.premium = true;
+// };
 
 if (url.indexOf(path3) != -1) {
   obj.data.user.subscription = true;
