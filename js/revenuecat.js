@@ -20,7 +20,7 @@ let list = {
   "Planta": {"name": "premium", "id": "com.stromming.Plants.12month"},
   "ChatGPTApp": {"name": "Advanced", "id": "com.palligroup.gpt3.yearlyyy"},
   "TouchRetouch": {"name": "premium", "id": "tr5_yearlysubsc_15dlrs_1"},
-    "AIChat": { "name": "AI Plus", "id": "aiplus_yearly" },
+  "AIChat": { "name": "AI Plus", "id": "aiplus_yearly" },
   "AIKeyboard": { "name": "plus_keyboard", "id": "aiplus_keyboard_yearly" },
   "APTV": { "name": "pro", "id": "com.kimen.aptvpro.lifetime" },
   "AnkiPro": { "name": "Premium", "id": "com.ankipro.app.lifetime" },
