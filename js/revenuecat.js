@@ -93,7 +93,7 @@ let list = {
   "Voicenotes": { "name": "pro", "id": "lifetime_believer_1" },
   "Opal": { "name": "premium", "id": "lifetime_tier2" }
 };
-let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2099-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
+let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2029-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
 let ent_data = {"grace_period_expires_date":null,"purchase_date":"2024-01-01T08:00:00Z","expires_date":"2029-12-31T23:59:59Z"};
 
 if (typeof $response == "undefined") {
