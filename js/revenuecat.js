@@ -94,7 +94,7 @@ let list = {
   "Opal": { "name": "premium", "id": "lifetime_tier2" }
 };
 let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2099-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
-let ent_data = {"grace_period_expires_date":null,"purchase_date":"2022-01-01T08:00:00Z","expires_date":"2099-12-31T23:59:59Z"};
+let ent_data = {"grace_period_expires_date":null,"purchase_date":"2024-01-01T08:00:00Z","expires_date":"2029-12-31T23:59:59Z"};
 
 if (typeof $response == "undefined") {
   delete $request.headers["x-revenuecat-etag"];
@@ -114,10 +114,10 @@ if (typeof $response == "undefined") {
   resp.body = JSON.stringify(obj);
 } else if (obj && obj.subscriber) {
   resp.body = body
-    .replace(/\"expires_date\":\".*?\"/g, '"expires_date":"2099-12-31T23:59:59Z"')
-    .replace(/\"purchase_date\":\".*?\"/g, '"purchase_date":"2022-01-01T08:00:00Z"')
-    .replace(/\"first_seen\":\".*?\"/g, '"first_seen":"2022-01-01T08:00:00Z"')
-    .replace(/\"original_purchase_date\":\".*?\"/g, '"original_purchase_date":"2022-01-01T08:00:00Z"')
+    .replace(/\"expires_date\":\".*?\"/g, '"expires_date":"2029-12-31T23:59:59Z"')
+    .replace(/\"purchase_date\":\".*?\"/g, '"purchase_date":"2024-01-01T08:00:00Z"')
+    .replace(/\"first_seen\":\".*?\"/g, '"first_seen":"2024-01-01T08:00:00Z"')
+    .replace(/\"original_purchase_date\":\".*?\"/g, '"original_purchase_date":"2024-01-01T08:00:00Z"')
     .replace(/\"unsubscribe_detected_at\":\".*?\"/g, '"unsubscribe_detected_at":null')
     .replace(/\"period_type\":\"\w+\"/g, '"period_type":"active"');
 };
