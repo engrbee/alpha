@@ -90,7 +90,7 @@ let list = {
   "windiary": { "name": "Pro", "id": "windiary_1799_lt" },
   "Medis": { "name": "pro", "id": "li.zihua.medis_2_pro" },
   "Whisper Mate": { "name": "pro", "id": "whisper.pro" },
-  "Voicenotes": { "name": "pro", "id": "lifetime_believer_5" },
+  "Voicenotes": { "name": "pro", "id": "lifetime_believer_1" },
   "Opal": { "name": "premium", "id": "lifetime_tier2" }
 };
 let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2099-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
