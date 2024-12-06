@@ -20,7 +20,7 @@ if (url == "https://app.milanote.com/api/users/me") {
       "price": 119.99
     }
   };
-  obj["user"]["subscriptionId"] = "sub_1OtgFOFRQokYInZjMLRMINbm";
+  // obj["user"]["subscriptionId"] = "sub_1OtgFOFRQokYInZjMLRMINbm";
 } else if (url.indexOf("api/users/me/counts") != -1) {
   obj["isUnlimited"] = true;
 } else {
