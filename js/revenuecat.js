@@ -74,6 +74,7 @@ let list = {
   "Structured": { "name": "pro", "id": "app.structured.pro.yearly" },
   "Structured": { "name": "pro", "id": "today.structured.pro" },
   "TextMask": { "name": "pro", "id": "tm_lifetime" },
+  "whatsgoingon": { "name": "pro", "id": "lifetime_discount" },
   "TouchRetouch": { "name": "premium", "id": "tr5_yearlysubsc_15dlrs_1" },
   "TouchRetouchBasic": { "name": "premium", "id": "tr5_yearlysubsc_30_and_20_dlrs" },
   "Uptime": { "name": "premium", "id": "com.wingsy.uptime_premium_year" },
