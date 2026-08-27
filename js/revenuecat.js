@@ -1,126 +1,259 @@
-let resp = {};
-let body = typeof $response != "undefined" && $response.body || null;
-let obj = JSON.parse(body);
-let ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
-let list = {
-  "Balance": {"name": "pro", "id": "ios_subscription_annual_intl_intro_free_69.99_2021.12.06"},
-  "Rootd": {"name": "pro", "id": "subscription_yearly_week_trial"},
-  "Structured": {"name": "pro", "id": "app.structured.pro.yearly"},
-  "VSCO": {"name": "membership", "id": "vscopro_global_5999_annual_7D_free"},
-  "Photo": {"name": "pro", "id": "pixelmator_photo_yearly_v1"},
-  "Lungy": {"name": "pro", "id": "lungy_1499_1y_1w0"},
-  "ScannerPro": {"name": "premium", "id": "com.readdle.Scanner.subscription.year25"},
-  "NotePlan": {"name": "pro", "id": "co.noteplan.subscription.businessclass.annual"},
-  "Prisma": {"name": "premium", "id": "premium.promo.annual"},
-  "Endel": {"name": "pro", "id": "12_Months_Instant_Offer"},
-  "PhotoRoom": {"name": "pro", "id": "com.background.pro.yearly"},
-  "Balance": {"name": "pro", "id": "ios_subscription_annual_69.99_2020.04.15"},
-  "Harukong": {"name": "premium", "id": "com.bluesignum.harukong.1yearSubscription"},
-  "Uptime": {"name": "premium", "id": "com.wingsy.uptime_premium_year"},
-  "Planta": {"name": "premium", "id": "com.stromming.Plants.12month"},
-  "ChatGPTApp": {"name": "Advanced", "id": "com.palligroup.gpt3.yearlyyy"},
-  "TouchRetouch": {"name": "premium", "id": "tr5_yearlysubsc_15dlrs_1"},
-  "AIChat": { "name": "AI Plus", "id": "aiplus_yearly" },
-  "AIKeyboard": { "name": "plus_keyboard", "id": "aiplus_keyboard_yearly" },
-  "APTV": { "name": "pro", "id": "com.kimen.aptvpro.lifetime" },
-  "AnkiPro": { "name": "Premium", "id": "com.ankipro.app.lifetime" },
-  "Awesome Habits": { "name": "premium", "id": "HabitsPremiumLifetime" },
-  "Balance": { "name": "pro", "id": "balance_pro_yearly" },
-  "BlackBox": { "name": "plus", "id": "app.filmnoir.appstore.purchases.lifetime" },
-  "Chat%E7%BB%83%E5%8F%A3%E8%AF%AD": { "name": "Premium", "id": "com.tech.AiSpeak.All" },
-  "ChatGPTApp": { "name": "Advanced", "id": "com.palligroup.gpt3.yearlyyy" },
-  "ColorSlurp": { "name": "pro", "id": "com.IdeaPunch.ColorSlurp.subscription.pro.yearlyOneTimeUpgradeDiscount" },
-  "Context_iOS": { "name": "pro", "id": "ctx_3y_sspai_preorder_angel" },
-  "Cookie": { "name": "allaccess", "id": "app.ft.Bookkeeping.lifetime" },
-  "CountDuck": { "name": "premium", "id": "Lifetime" },
-  "Currency": { "name": "plus", "id": "com.jeffreygrossman.currencyapp.iap.pro.crossgrade" },
-  "Cuto": { "name": "pro", "id": "com.potatsolab.cuto.pro" },
-  "DirEqual": { "name": "direqualpro", "id": "direqual.onetime" },
-  "Emoji+%20%F0%9F%98%9": { "name": "premium", "id": "com.emoji.freemium.subscription.premium" },
-  "Endel": { "name": "pro", "id": "12_Months_Instant_Offer" },
-  "Flow": { "name": "pro", "id": "design.yugen.Flow.Lifetime" },
-  "Free": { "name": "pro", "id": "appspree_pro_lifetime" },
-  "Funexpected%20Math": { "name": "plus", "id": "Plus6Months14DaysTrial" },
-  "HTTPBot": { "name": "Pro", "id": "httpbot_1499_1y_1w0" },
-  "HabitKit": { "name": "Pro", "id": "habitkit_1799_lt" },
-  "Harukong": { "name": "premium", "id": "com.bluesignum.harukong.1yearSubscription" },
-  "ImagineAI": { "name": "pro", "id": "artistai.yearly.1" },
-  "InYourFace": { "name": "premium", "id": "iyf.premium.v2.yearly" },
-  "Langster": { "name": "Premium", "id": "com.langster.universal.lifetime" },
-  "Law": { "name": "vip", "id": "LawVIPOneYear" },
-  "Liftbear": { "name": "Pro", "id": "liftbear_2399_1y" },
-  "LongmaoApp": { "name": "pro", "id": "douyina_forever_01" },
-  "Lungy": { "name": "pro", "id": "lungy_1499_1y_1w0" },
-  "Muse": { "name": "pro", "id": "monthly_pro_muse" },
-  "MusicMate": { "name": "premium", "id": "mm_lifetime_68_premium" },
-  "MyPianist": { "name": "pro", "id": "com.collaparte.mypianist.pro.gift.twelve" },
-  "NotePlan": { "name": "pro", "id": "co.noteplan.subscription.businessclass.annual" },
-  "OpenCat": { "name": "pro", "id": "tech.baye.OpenCat.pro.monthly" },
-  "PastePal": { "name": "pro", "id": "com.onmyway133.PastePal.pro" },
-  "Photo": { "name": "pro", "id": "pixelmator_photo_yearly_v1" },
-  "PhotoRoom": { "name": "pro", "id": "com.background.pro.yearly" },
-  "Planta": { "name": "premium", "id": "com.stromming.Plants.12month" },
-  "Prisma": { "name": "premium", "id": "premium.promo.annual" },
-  "Readle": { "name": "Premium", "id": "com.hello.german.yearly" },
-  "RocketSim": { "name": "rocketsim_pro", "id": "com.rocketsim.lifetime.subscription" },
-  "Rootd": { "name": "pro", "id": "subscription_yearly_week_trial" },
-  "ScannerPro": { "name": "premium", "id": "com.readdle.Scanner.subscription.year25" },
-  "Scherlokk": { "name": "schpro", "id": "scherlokk.onetime" },
-  "Sex%20Actions": { "name": "Premium Plus", "id": "ru.sexactions.subscriptionPlusWeek1" },
-  "Sketch": { "name": "memberships", "id": "com.sketch.workspace.yearly" },
-  "SmartAIChat": { "name": "Premium", "id": "sc_3999_1y" },
-  "StarDiary": { "name": "pro", "id": "com.gsdyx.StarDiary.nonConsumable.forever" },
-  "StarFocus": { "name": "pro", "id": "com.gsdyx.StarFocus.nonConsumable.forever" },
-  "Structured": { "name": "pro", "id": "app.structured.pro.yearly" },
-  "Structured": { "name": "pro", "id": "today.structured.pro" },
-  "TextMask": { "name": "pro", "id": "tm_lifetime" },
-  "whatsgoingon": { "name": "pro", "id": "lifetime_discount" },
-  "TouchRetouch": { "name": "premium", "id": "tr5_yearlysubsc_15dlrs_1" },
-  "TouchRetouchBasic": { "name": "premium", "id": "tr5_yearlysubsc_30_and_20_dlrs" },
-  "Uptime": { "name": "premium", "id": "com.wingsy.uptime_premium_year" },
-  "Usage": { "name": "pro", "id": "pro.usage.mac.lifetime_1" }, 
-  "VOX": { "name": "premium", "id": "rocks.vox.premium.yearly" },
-  "VSCO": { "name": "membership", "id": "vscopro_global_5999_annual_7D_free" },
-  "Version": { "name": "pro", "id": "httpbot_1499_1y_1w0" },
-  "Vision": { "name": "promo_3.0", "id": "vis_lifetime_3.0_promo" },
-  "VoiceAI": { "name": "Special Offer", "id": "voiceannualspecial" },
-  "cdiary": { "name": "Premium", "id": "pub.kiya.daymoment.lifetime" },
-  "image_upscaler": { "name": "pro", "id": "yearly_sub_pro" },
-  "uDock": { "name": "udockpro", "id": "udock.onetime" },
-  "universal": { "name": "Premium", "id": "remotetv.yearly.01" },
-  "windiary": { "name": "Pro", "id": "windiary_1799_lt" },
-  "Medis": { "name": "pro", "id": "li.zihua.medis_2_pro" },
-  "Whisper Mate": { "name": "pro", "id": "whisper.pro" },
-  "Voicenotes": { "name": "pro", "id": "lifetime_believer_1" },
-  "Opal": { "name": "premium", "id": "lifetime_tier2" }
-};
-let sub_data = {"original_purchase_date":"2022-01-01T08:00:00Z","expires_date":"2029-12-31T23:59:59Z","is_sandbox":false,"refunded_at":null,"unsubscribe_detected_at":null,"grace_period_expires_date":null,"period_type":"active","purchase_date":"2022-01-01T08:00:00Z","billing_issues_detected_at":null,"ownership_type":"PURCHASED","store":"app_store","auto_resume_date":null};
-let ent_data = {"grace_period_expires_date":null,"purchase_date":"2024-01-01T08:00:00Z","expires_date":"2029-12-31T23:59:59Z"};
+// RevenueCat entitlement unlock for Surge (MITM).
+// Strategy per /v1/subscribers response:
+//  1. If the body carries product_entitlement_mapping (the app's actual configured
+//     products/entitlements), grant every entitlement in it. Existing entries that
+//     are still active are kept untouched (real purchases stay real); missing or
+//     expired ones are filled with fabricated grants. No app identification needed.
+//  2. Else retrieve /v1/product_entitlement_mapping on the fly (using the request's
+//     own Authorization header, cached via $persistentStore for 24h) and grant from
+//     that - covers apps that fetch the mapping separately (e.g. SwiftServer).
+//  3. Else match the app by User-Agent substring against uamap (below; keys are
+//     matched against the decoded UA, so spaces/unicode are written literally) and
+//     rewrite the /v1/subscribers response.
+//  4. Else fall back to a global date find-&-replace.
+// Sensitive headers (Authorization, x-revenuecat-etag) are stripped from the
+// response handed to the app. The Authorization header must stay on the REQUEST,
+// otherwise RevenueCat would reject it. The /v1/product_entitlement_mapping fetch
+// is made via $httpClient and therefore is not re-intercepted by this script.
 
-if (typeof $response == "undefined") {
-  delete $request.headers["x-revenuecat-etag"];
-  delete $request.headers["X-RevenueCat-ETag"];
-  resp.headers = $request.headers;
-} else if (obj && obj.subscriber && body.indexOf("expires_date") == -1) {
-  obj.subscriber.subscriptions = obj.subscriber.subscriptions || {};
-  obj.subscriber.entitlements = obj.subscriber.entitlements || {};
-  for (const i in list) {
-    if (new RegExp(`^${i}`, `i`).test(ua)) {
-      obj.subscriber.subscriptions[list[i].id] = sub_data;
-      obj.subscriber.entitlements[list[i].name] = JSON.parse(JSON.stringify(ent_data));
-      obj.subscriber.entitlements[list[i].name].product_identifier = list[i].id;
-      break;
-    }
-  };
-  resp.body = JSON.stringify(obj);
-} else if (obj && obj.subscriber) {
-  resp.body = body
-    .replace(/\"expires_date\":\".*?\"/g, '"expires_date":"2029-12-31T23:59:59Z"')
-    .replace(/\"purchase_date\":\".*?\"/g, '"purchase_date":"2024-01-01T08:00:00Z"')
-    .replace(/\"first_seen\":\".*?\"/g, '"first_seen":"2024-01-01T08:00:00Z"')
-    .replace(/\"original_purchase_date\":\".*?\"/g, '"original_purchase_date":"2024-01-01T08:00:00Z"')
-    .replace(/\"unsubscribe_detected_at\":\".*?\"/g, '"unsubscribe_detected_at":null')
-    .replace(/\"period_type\":\"\w+\"/g, '"period_type":"active"');
+const DEBUG = true;
+const log = (...args) => { if (DEBUG) console.log(...args); };
+
+const ACTIVE_UNTIL = "2026-12-31T00:00:00Z";
+const PURCHASED_AT = "2026-01-01T00:00:00Z";
+
+const uamap = {
+  "stoic": { "name": "ai-plan", "id": "com.mlobodzinski.Stoic.yearlyAI" }
 };
 
-$done(resp);
+const sub_data = {
+  auto_resume_date: null,
+  billing_issues_detected_at: null,
+  display_name: "Premium",
+  expires_date: ACTIVE_UNTIL,
+  grace_period_expires_date: null,
+  is_sandbox: false,
+  management_url: "https://apps.apple.com/account/subscriptions",
+  original_purchase_date: PURCHASED_AT,
+  ownership_type: "PURCHASED",
+  period_type: "normal",
+  price: { amount: 99.99, currency: "USD" },
+  purchase_date: PURCHASED_AT,
+  refunded_at: null,
+  store: "app_store",
+  store_transaction_id: "510002415985363",
+  unsubscribe_detected_at: null
+};
+
+const ent_data = {
+  grace_period_expires_date: null,
+  purchase_date: PURCHASED_AT,
+  expires_date: ACTIVE_UNTIL
+};
+
+const REQUEST =
+  (typeof $request !== "undefined" && $request) || { headers: {} };
+const RESPONSE = typeof $response !== "undefined" ? $response : null;
+const headers = Object.keys(REQUEST.headers || {}).reduce((acc, key) => {
+  acc[key.toLowerCase()] = REQUEST.headers[key];
+  return acc;
+}, {});
+
+const rawUa = String(headers["user-agent"] || "");
+const auth = String(headers["authorization"] || "");
+let ua = rawUa;
+try { ua = decodeURIComponent(rawUa); } catch (_) { /* keep raw UA */ }
+
+log("======== RevenueCat hook ========");
+log("UA:", ua);
+
+const findApp = () => {
+  for (const key of Object.keys(uamap)) {
+	if ((ua && ua.includes(key)) || rawUa.includes(key)) return uamap[key];
+  }
+  return null;
+};
+
+const now = Date.now();
+
+const isActive = (entry) => {
+  if (!entry) return false;
+  const activeUntil = entry.expires_date ? Date.parse(entry.expires_date) : Infinity;
+  const graceUntil = entry.grace_period_expires_date
+	? Date.parse(entry.grace_period_expires_date)
+	: -Infinity;
+  return activeUntil > now || graceUntil > now;
+};
+
+const stripSensitiveHeaders = (respHeaders) => {
+  const out = {};
+  for (const [k, v] of Object.entries(respHeaders || {})) {
+	const key = k.toLowerCase();
+	if (key === "authorization" || key === "x-revenuecat-etag") continue;
+	out[k] = v;
+  }
+  return out;
+};
+
+// Normalize both mapping shapes into productId -> [entId,...]:
+//  - in subscriber body:   product -> { entitlement_identifiers: [...] }
+//  - mapping endpoint:     product -> { entitlements: [...], product_identifier }
+const normalizeMapping = (mapping) => {
+  const out = {};
+  for (const pid of Object.keys(mapping || {})) {
+	const entry = mapping[pid] || {};
+	const ids = entry.entitlement_identifiers || entry.entitlements || [];
+	if (Array.isArray(ids) && ids.length) out[pid] = ids;
+  }
+  return out;
+};
+
+const applyMapping = (obj, mapping) => {
+  const products = Object.keys(mapping);
+  const entToProduct = {};
+  for (const pid of products) {
+	for (const eid of mapping[pid]) if (!(eid in entToProduct)) entToProduct[eid] = pid;
+  }
+
+  const entitlements = obj.subscriber.entitlements || {};
+  const subscriptions = obj.subscriber.subscriptions || {};
+
+  let tx = 510002415985363;
+  for (const pid of products) {
+	if (isActive(subscriptions[pid])) continue;
+	tx += 1;
+	subscriptions[pid] = { ...sub_data, store_transaction_id: String(tx) };
+  }
+  for (const eid of Object.keys(entToProduct)) {
+	if (isActive(entitlements[eid])) continue;
+	entitlements[eid] = { ...ent_data, product_identifier: entToProduct[eid] };
+  }
+  obj.subscriber.entitlements = entitlements;
+  obj.subscriber.subscriptions = subscriptions;
+};
+
+const grantByMapping = (obj) => {
+  const mapping = normalizeMapping(obj.product_entitlement_mapping);
+  if (!Object.keys(mapping).length) return false;
+  applyMapping(obj, mapping);
+  return true;
+};
+
+const MAPPING_URL = "https://api.revenuecat.com/v1/product_entitlement_mapping";
+const CACHE_KEY = "rc_mapping_cache";
+const CACHE_TTL_MS = 24 * 3600 * 1000;
+
+const readCache = () => {
+  try {
+	const raw = typeof $persistentStore !== "undefined" && $persistentStore.read(CACHE_KEY);
+	if (!raw) return null;
+	const data = JSON.parse(raw);
+	if (data.auth === auth && Date.now() - data.ts < CACHE_TTL_MS && data.mapping) return data.mapping;
+  } catch (_) { /* ignore */ }
+  return null;
+};
+
+const writeCache = (mapping) => {
+  try {
+	if (typeof $persistentStore !== "undefined") {
+	  $persistentStore.write(JSON.stringify({ ts: Date.now(), auth, mapping }), CACHE_KEY);
+	}
+  } catch (_) { /* ignore */ }
+};
+
+const fetchMapping = (cb) => {
+  const cached = readCache();
+  if (cached) return cb(cached);
+  if (typeof $httpClient === "undefined" || !$httpClient.get) return cb(null);
+  if (!auth) return cb(null);
+
+  log("Fetching /v1/product_entitlement_mapping...");
+  $httpClient.get({
+	url: MAPPING_URL,
+	headers: {
+	  Authorization: auth,
+	  Accept: "*/*",
+	  "Content-Type": "application/json",
+	  "X-Platform": "macOS"
+	},
+	timeout: 5000
+  }, (err, resp, body) => {
+	let mapping = null;
+	try {
+	  mapping = normalizeMapping(JSON.parse(body || "").product_entitlement_mapping);
+	  if (!Object.keys(mapping).length) mapping = null;
+	} catch (_) { /* not JSON */ }
+	if (mapping) writeCache(mapping);
+	else log("Mapping fetch failed:", err);
+	cb(mapping);
+  });
+};
+
+const uaOrFallback = (obj, body, out, done) => {
+  const hit = findApp();
+  if (hit) {
+	log("Hook by user agent:", hit);
+	obj.subscriber.subscriptions = { [hit.id]: sub_data };
+	obj.subscriber.entitlements = { [hit.name]: { ...ent_data, product_identifier: hit.id } };
+	return done({ ...out, body: JSON.stringify(obj) });
+  }
+
+  if (body.includes("expires_date")) {
+	log("Hook by find & replace");
+	return done({
+	  ...out,
+	  body: body
+		.replace(/"expires_date":\s*".*?"/g, `"expires_date":"${ACTIVE_UNTIL}"`)
+		.replace(/"purchase_date":\s*".*?"/g, `"purchase_date":"${PURCHASED_AT}"`)
+		.replace(/"first_seen":\s*".*?"/g, `"first_seen":"${PURCHASED_AT}"`)
+		.replace(/"original_purchase_date":\s*".*?"/g, `"original_purchase_date":"${PURCHASED_AT}"`)
+		.replace(/"unsubscribe_detected_at":\s*".*?"/g, '"unsubscribe_detected_at":null')
+		.replace(/"grace_period_expires_date":\s*".*?"/g, '"grace_period_expires_date":null')
+		.replace(/"period_type":\s*"\w+"/g, '"period_type":"normal"')
+	});
+  }
+
+  log("Hook failed: no mapping / no matching app / no subscription in body");
+  done(null);
+};
+
+const buildResp = (done) => {
+  if (!RESPONSE) {
+	delete headers["x-revenuecat-etag"];
+	delete headers["X-RevenueCat-ETag"];
+	return done({ headers });
+  }
+  if (!RESPONSE.body) { log("Hook failed: no response body"); return done(null); }
+  const body = RESPONSE.body;
+
+  let obj;
+  try { obj = JSON.parse(body); } catch (_) { log("Hook failed: invalid JSON"); return done(null); }
+  if (!obj || !obj.subscriber) { log("Hook failed: no subscriber object"); return done(null); }
+
+  const out = { headers: stripSensitiveHeaders(RESPONSE.headers) };
+
+  if (grantByMapping(obj)) {
+	log("Hook by in-body product_entitlement_mapping");
+	return done({ ...out, body: JSON.stringify(obj) });
+  }
+
+  if (!auth) return uaOrFallback(obj, body, out, done);
+  fetchMapping((mapping) => {
+	if (mapping && Object.keys(mapping).length) {
+	  log("Hook by fetched product_entitlement_mapping");
+	  applyMapping(obj, mapping);
+	  return done({ ...out, body: JSON.stringify(obj) });
+	}
+	uaOrFallback(obj, body, out, done);
+  });
+};
+
+try {
+  buildResp((patched) => {
+	if (patched) $done(patched);
+	else $done(RESPONSE);
+  });
+} catch (err) {
+  log("Hook error:", err);
+  $done(RESPONSE);
+}
